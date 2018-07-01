@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:WashMachine.ViewModels"
+             x:Class="WashMachine.Views.LoginView">
+   <StackLayout Padding="40">
+        <Entry Placeholder="Email" Text="{Binding Email, Mode=TwoWay}">
+        </Entry>
+        <Entry Placeholder="Password" IsPassword="true" Text="{Binding Password, Mode=TwoWay}">
+        </Entry>
+        <Button x:Name="loginBtn" Text="Login" Command="{Binding LoginCommand}" BackgroundColor="#668cff">
+        </Button>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Label Text="Don't have an account yet?"/>
+            <Label Text="Register now" TextColor="#668cff">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RegisterCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+   </StackLayout>
+</ContentPage>
